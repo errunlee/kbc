@@ -9,10 +9,10 @@ const QueAns = ({ setShowStartButton, setTimer, gameStarted, questions, setRight
         return;
     }
 
-    const answergiven = new Audio('../src/assets/audios/answergiven.mp3')
-    const win = new Audio('../src/assets/audios/win.mp3')
-    const buzzer = new Audio('../src/assets/audios/buzzer.mp3')
-    const thinking = new Audio('../src/assets/audios/thinking.mp3')
+    const answergiven = new Audio('audios/answergiven.mp3')
+    const win = new Audio('audios/win.mp3')
+    const buzzer = new Audio('audios/buzzer.mp3')
+    const thinking = new Audio('audios/thinking.mp3')
 
     const [queNum, setQueNum] = useState(0)
     const [question, setQuestion] = useState(null)
@@ -47,8 +47,10 @@ const QueAns = ({ setShowStartButton, setTimer, gameStarted, questions, setRight
 
     // check answer
     const handleClick = (opt, id) => {
+        if(chosen){
+            return;
+        }
         answergiven.play();
-
         setShowStartButton(false)
         setChosen(true)
         setGameStarted(false)
@@ -59,7 +61,7 @@ const QueAns = ({ setShowStartButton, setTimer, gameStarted, questions, setRight
         document.getElementById(id).classList.remove('incorr-ans')
         // setGameOver(true)
         if (opt == question.correct_answer) {
-
+            thinking.pause();
             document.getElementById(id).classList.add('incorr-ans')
             setTimeout(() => {
                 document.getElementById(id).classList.remove('incorr-ans')
@@ -79,6 +81,7 @@ const QueAns = ({ setShowStartButton, setTimer, gameStarted, questions, setRight
 
         }
         else {
+            thinking.pause();
             document.getElementById(id).classList.add('incorr-ans')
             setTimeout(() => {
                 document.getElementsByClassName('corr-ans')[0].classList.add('correct-ans')
@@ -96,14 +99,26 @@ const QueAns = ({ setShowStartButton, setTimer, gameStarted, questions, setRight
     }
 
     useEffect(()=>{
-        thinking.pause();
         thinking.currentTime=0;
+
         if(gameOver){
+
             return;
         }
-        thinking.play();
+        else{
+            thinking.play();
+        }
     },[queNum])
 
+
+    useEffect(() => {
+        if(gameOver){
+            setTimeout(() => {
+            thinking.pause();
+            }, 1000);
+        }    
+        }, [gameOver])
+    
     if (!gameStarted && !chosen) {
         return;
     }

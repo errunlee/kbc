@@ -3,11 +3,6 @@ import './App.css'
 import Banner from './Banner'
 import QueAns from './QueAns'
 import Youhavewon from './Youhavewon'
-// import letsPlay from './assets/audios/letsPlay.mp3'
-// import answergiven from './assets/audios/answergiven.mp3'
-// import thinking from './assets/audios/thinking.mp3'
-// import win from './assets/audios/win.mp3'
-// import ls from './assets/audios/letsPlay.mp3'
 
 function App() {
   const [questions, setQuestions] = useState(null)
@@ -17,7 +12,7 @@ function App() {
   const [gameOver, setGameOver] = useState(false)
   const [showStartButton, setShowStartButton] = useState(true)
 
-  const letsPlay=new Audio('../src/assets/audios/letsplay.mp3');
+  const letsPlay=new Audio('audios/letsplay.mp3');
 
 
   const handleClick = () => {
@@ -73,9 +68,12 @@ function App() {
         :
         <Youhavewon rightAnswered={rightAnswered} />}
 
-      {!gameStarted && showStartButton && <div className='flex justify-center'><button class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 mt-9 text-xl" onClick={handleClick}>Start</button>
-      </div>}
+      {!gameStarted && showStartButton && <div className='flex justify-center my-9'><button onClick={handleClick}>
+      <img  className='playbtn' width="100" height="100" src="https://img.icons8.com/flat-round/64/play--v1.png" alt="play--v1"/>
 
+      </button>
+      </div>}
+        <p className='text-center text-white text-lg'>Copyright &copy; Errun Lee, 2023 Inc</p>
     </>
   )
 }
