@@ -1,0 +1,42 @@
+.quest {
+  padding: 15px 20%;
+  background-image: url('./assets/quest.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 18px;
+  line-height: 22px;
+  min-height: 80px;
+  font-family: Arial, Verdana, "Helvetica CY", sans-serif;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+
+.answer {
+  background: url('./assets/answer_bg.webp');
+  padding: 0 5%;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 100% 310px;
+  text-align: center;
+  width: 340px;
+  font-size: 18px;
+  line-height: 22px;
+  height: 40px;
+  overflow: hidden;
+  font-family: Arial, Verdana, "Helvetica CY", sans-serif;
+
+}
+
+
+.answer:focus{
+  background-position: 0 -52px;
+}
+.correct-ans{
+  background-position: 0 !important;
+}
+.incorrect-ans{
+  background-position: 0 -52px ;
+}

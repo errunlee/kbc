@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
+body{
+    background: url('./assets/bg.webp');
+    font-family: 'Lato',sans-serif !important;
+}

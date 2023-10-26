@@ -1,0 +1,19 @@
+.timer {
+    height: 200px;
+    width: 200px;
+
+}
+
+.timer .loader {
+    height: 190px;
+    width: 190px;
+}
+
+.active-amt {
+    background-image: url('./assets/active_money.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    color: black !important;
+
+}

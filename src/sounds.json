@@ -1,0 +1,8 @@
+{
+    "sounds":[
+        {
+            "title":"lets_play",
+            "src":"./assets/audios/letsplay.mp3"
+        }
+    ]
+}

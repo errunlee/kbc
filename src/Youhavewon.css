@@ -1,0 +1,8 @@
+.amount {
+    border: 3px solid #eca21b;
+    border-radius: 100%;
+    padding: 1rem 2rem;
+    background: #99783d;
+    font-weight: bolder;
+    color: #67c7e8;
+}
