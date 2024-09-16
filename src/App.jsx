@@ -16,6 +16,7 @@ function App() {
 
   const handleClick = () => {
                          setGameStarted(true);
+                         console.log('object')
     letsPlay.play();
   };
 
