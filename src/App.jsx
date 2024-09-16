@@ -15,7 +15,7 @@ function App() {
   const letsPlay = new Audio("audios/letsplay.mp3");
 
   const handleClick = () => {
-    setGameStarted(true);
+                         setGameStarted(true);
     letsPlay.play();
   };
 
@@ -24,8 +24,8 @@ function App() {
       return;
     }
 
-    const interval = setInterval(() => {
-      setTimer((prev) => {
+              const interval = setInterval(() => {
+                setTimer((prev) => {
         if (prev <= 1) {
           clearInterval(interval);
           setGameOver(true);
